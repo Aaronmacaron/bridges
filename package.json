@@ -1,0 +1,16 @@
+{
+  "name": "bridges",
+  "version": "0.1.0",
+  "description": "Bridges game",
+  "main": "app.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot",
+    "prod": "webpack"
+  },
+  "author": "Aaron Ebnöther",
+  "license": "Unlicense",
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}
