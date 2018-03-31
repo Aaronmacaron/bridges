@@ -1,5 +1,6 @@
 import Rect from "./Rect";
 import Circle from "./Circle";
+import Point from "./Point";
 
 export default class Can {
 
@@ -70,6 +71,17 @@ export default class Can {
         this._ctx.lineTo(line.endPoint.x, line.endPoint.y);
         this._ctx.stroke();
         this._ctx.closePath();
+    }
+
+    convertAbsoluteClickPositionToRelative(point) {
+        const rect = this._canvas.getBoundingClientRect();
+        const x = point.x - rect.left;
+        const y = point.y - rect.top;
+        return new Point(x, y);
+    }
+
+    clear() {
+        this._ctx.clearRect(0, 0, this._canvas.width, this._canvas.height);
     }
 
     get width() {
